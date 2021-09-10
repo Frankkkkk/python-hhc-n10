@@ -57,3 +57,20 @@ class HHCN10:
 
         self._send_msg_and_receive(msg)
 
+
+    def change_ip(self, new_ip: str, netmask: str, gateway: str):
+        cmds = [
+            f'AT+SET="{self.ip}"',
+            f'AT+IP="{new_ip}"',
+            f'AT+SUBNET="{netmask}"',
+            f'AT+GATEWAY="{gateway}"',
+            'AT+STATUS=0',
+            'AT+SAVE=1'
+        ]
+        msg = ''.join(cmds).encode()
+
+
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP) as s:
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+            s.bind(("", 65535))
+            s.sendto(msg, ('<broadcast>', 65535))
