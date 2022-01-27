@@ -21,4 +21,4 @@ print('And now the relay is: ' + h.read_relay())
 Please note that the implementation of their TCP stack is finnicky and only accepts 5 parallel connections. If you try to open too many sockets at once the relay will hang for some time.
 
 ## Default params
-The relay default's IP is `192.168.0.105/24`. If your computer is not in this same subnet, you'll need to add a static route + a static IP in the same subnet as this relay. The function to change the relay's IP will come someday
+The relay default's IP is `192.168.0.105/24`. If your computer is not in this same subnet, you'll need to add a static route + a static IP in the same subnet as this relay. You can then change the device's IP using the `change_ip(addr, netmask, gw)` method.
