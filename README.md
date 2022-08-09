@@ -3,6 +3,12 @@
 ## What is this lib ?
 This library is made to communicate with HHC-N10 devices. They are relays that can be toggled via ethernet (TCP/IP).
 
+## How to install the lib ?
+You can get it from [pypi](https://pypi.org/project/python-hhc-n10/) like so:
+```
+pip3 install python-hhc-n10
+```
+
 ## How to use the lib
 ```python3
 from hhcn10 import hhcn10
