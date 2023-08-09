@@ -11,6 +11,7 @@ pip3 install python-hhc-n10
 
 ## How to use the lib
 ```python3
+import time
 from hhcn10 import hhcn10
 
 h = hhcn10.HHCN10()
