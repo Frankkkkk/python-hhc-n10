@@ -21,7 +21,7 @@ print('The relay is: ' + str(h.read_relay()))
 time.sleep(1)
 
 h.set_relay(False)
-print('And now the relay is: ' + h.read_relay())
+print('And now the relay is: ' + str(h.read_relay()))
 ```
 
 Please note that the implementation of their TCP stack is finnicky and only accepts 5 parallel connections. If you try to open too many sockets at once the relay will hang for some time.
